@@ -24,7 +24,7 @@ SPACES_ENDPOINT="https://${DIGITAL_OCEAN_REGION}.digitaloceanspaces.com"
 SPACES_BUCKET="s3://${DOMAIN}"
 
 # The ssh keypair id (required to start a droplet)
-DROPLET_KEYPAIR='28700422' # `doctl compute ssh-key list` to fine IDs
+DROPLET_KEYPAIR='28936380' # `doctl compute ssh-key list` to fine IDs
 
 # The size of the droplets.
 DROPLET_SIZE='s-4vcpu-8gb' # `doctl compute size list` for more options
