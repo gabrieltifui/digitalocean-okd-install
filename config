@@ -4,8 +4,8 @@
 # digitalocean-okd-install script.
 
 # Set the name/domain you'd like to use for this cluster.
-CLUSTERNAME='okdtest'
-BASEDOMAIN='example.com'
+CLUSTERNAME='okd'
+BASEDOMAIN='scrollniuz.com'
 DOMAIN="${CLUSTERNAME}.${BASEDOMAIN}"
 
 # Determine how many control plane and worker nodes you'd like.
@@ -15,7 +15,7 @@ NUM_OKD_WORKERS=2
 NUM_OKD_CONTROL_PLANE=3
 
 # Set the region to use. Default to nyc3.
-DIGITAL_OCEAN_REGION='nyc3'
+DIGITAL_OCEAN_REGION='fra1'
 
 # S3 compatible endpoint for SPACES in this region.
 SPACES_ENDPOINT="https://${DIGITAL_OCEAN_REGION}.digitaloceanspaces.com"
@@ -24,10 +24,10 @@ SPACES_ENDPOINT="https://${DIGITAL_OCEAN_REGION}.digitaloceanspaces.com"
 SPACES_BUCKET="s3://${DOMAIN}"
 
 # The ssh keypair id (required to start a droplet)
-DROPLET_KEYPAIR='1111111' # `doctl compute ssh-key list` to fine IDs
+DROPLET_KEYPAIR='28700422' # `doctl compute ssh-key list` to fine IDs
 
 # The size of the droplets.
-DROPLET_SIZE='s-6vcpu-16gb' # `doctl compute size list` for more options
+DROPLET_SIZE='s-4vcpu-8gb' # `doctl compute size list` for more options
 
 # The location of the Fedora CoreOS image to use. The script takes
 # care of the import [1] for you. It will also skip the image import if
@@ -36,7 +36,7 @@ DROPLET_SIZE='s-6vcpu-16gb' # `doctl compute size list` for more options
 #
 # [1] https://docs.fedoraproject.org/en-US/fedora-coreos/provisioning-digitalocean/#_creating_a_digitalocean_custom_image
 # [2] https://getfedora.org/coreos/download?tab=cloud_operators&stream=stable
-FCOS_IMAGE_URL='https://example.com/builds/fedora-coreos-32.20200629.3.0-digitalocean.x86_64.qcow2.gz'
+FCOS_IMAGE_URL='https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/32.20201018.3.0/x86_64/fedora-coreos-32.20201018.3.0-digitalocean.x86_64.qcow2.gz'
 
 # Keep it simple. Derive the image name from the URL.
 DROPLET_IMAGE_NAME="${FCOS_IMAGE_URL##*/}"
