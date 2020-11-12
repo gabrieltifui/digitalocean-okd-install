@@ -515,19 +515,6 @@ main() {
         fi
     done
 
-    # Check for required software
-    reqs=(
-        aws
-        doctl
-        kubectl
-        oc
-        openshift-install
-        jq
-    )
-    for req in ${reqs[@]}; do
-        check_requirement $req
-    done
-
     # Create the spaces bucket to hold the bulky bootstrap config
     # Doing it here tests early that the spaces access works before
     # we create other resources.
